@@ -1,0 +1,54 @@
+<!--左边地图部分-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>天津地图</title>
+</head>
+<link href="css/workform.css" rel="stylesheet" type="text/css" />
+
+<style>
+    .tianjinSubArea:hover{
+        fill-opacity:0.5;
+        color:#ffff00;
+    }
+    #tooltip {
+        position: absolute;
+        text-align: center;
+    }
+
+    #tooltip{
+        background:rgba(0,0,0,0.9);
+        border:1px solid grey;
+        border-radius:5px;
+        font-size:12px;
+
+        padding:4px;
+        color:white;
+        opacity:0;
+    }
+
+    #tooltip table{
+        margin:0;
+        font-size:14px;
+        text-align: left;
+    }
+
+
+    #tooltip tr td{
+        color:white;
+        font-size:13px;
+        text-align: left;
+        max-width: 300px ;
+    }
+
+    #tooltip tr td:nth-child(1){
+        text-align: center;
+    }
+
+</style>
+
+<body>
+<script src = "lib/d3.min.js"></script>
+<script src = "js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body onclick="fresh()" onmousemove="fresh()">
+<script>
+    function getCanvas(id){
+        var c = document.getElementById(id);
+        if(c == null) {
+            c = document.createElement("canvas");
+            c.setAttribute("id", id);
+            c.setAttribute("width", "50");
+            c.setAttribute("height", "50");
+            c.setAttribute("style", "border:1px solid #c3c3c3;");
+            document.body.appendChild(c);
+        }
+        return c;
+    }
+
+    function fresh() {
+        for (var i = 0; i < 5000; i++) {
+            var c = getCanvas("canvas" + i);
+            var context = c.getContext("2d");
+            context.clearRect(0,0,50,50);
+
+            var start_pos = [Math.random() * 40 + 10, Math.random() * 40 + 10];
+            var fill = "rgb(" + Math.round(Math.random() * 255) + ","
+                    + Math.round(Math.random() * 255) + ","
+                    + Math.round(Math.random() * 255) + ")";
+            var size = 30;
+
+            context.beginPath();
+            context.fillStyle = fill;
+            context.moveTo(start_pos[0], start_pos[1]);
+            context.lineTo(start_pos[0] + size, start_pos[1]);
+            context.lineTo(start_pos[0] + size / 2, start_pos[1] + size * 1.73 / 2);
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(start_pos[0], start_pos[1], 5, 0, Math.PI * 2);
+            context.fill();
+            context.closePath();
+        }
+
+    }
+
+    // 该方法会很卡，而且很吃内存，内存线性增长
+    function fresh2(){
+        for (var i = 0; i < 5000; i++) {
+            var c = getCanvas("canvas" + i);
+            c.parentNode.removeChild(c);        // 释放前一次的内存，完全移除canvas
+            c = getCanvas("canvas" + i);
+            var context = c.getContext("2d");
+
+            var start_pos = [Math.random() * 40 + 10, Math.random() * 40 + 10];
+            var fill = "rgb(" + Math.round(Math.random() * 255) + ","
+                    + Math.round(Math.random() * 255) + ","
+                    + Math.round(Math.random() * 255) + ")";
+            var size = 30;
+
+            context.beginPath();
+            context.fillStyle = fill;
+            context.moveTo(start_pos[0], start_pos[1]);
+            context.lineTo(start_pos[0] + size, start_pos[1]);
+            context.lineTo(start_pos[0] + size / 2, start_pos[1] + size * 1.73 / 2);
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(start_pos[0], start_pos[1], 5, 0, Math.PI * 2);
+            context.fill();
+            context.closePath();
+        }
+    }
+
+    fresh();
+</script>
+</body>
+</html>

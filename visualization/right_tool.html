@@ -1,0 +1,205 @@
+<!--此页面为右边工具栏部分-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="css/toolstyle.css">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!--刻度漂亮显示-->
+    <link rel="stylesheet" href="css/ion.rangeSlider.css" />
+    <!--托条变为圆形，否则是线-->
+    <link rel="stylesheet" href="css/timeRangeSlider.css" />
+    <link rel="stylesheet" href="css/timeRangeSlider.skinFlat.css" />
+    <style type="text/css">
+        h2{
+            font-family:楷体；
+            font-size:20px;
+            font-weight:normal;
+            color:#ffffff;
+        }
+        h3{
+            font-family:楷体；
+            font-size:20px;
+            font-weight:normal;
+            position:relative;
+            color:#ffffff;
+        }
+
+        body{
+            background-color:#000000;
+        }
+
+        input[type="button"]
+        {
+            width:85px;
+            height:20px
+            min-height: 1.5em;
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px 5px 5px 0px;
+            cursor: pointer;
+            opacity: 0.9;
+
+            color: #FFF;
+            font-size: 1em;
+            letter-spacing: 1px;
+            text-shadow: rgba(0,0,0,0.9) 0px 1px 2px;
+
+            background: #434343;
+            border: 1px solid #242424;
+
+            -webkit-border-radius: 4px;
+            -khtml-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -webkit-transition: all 0.1s linear;
+            -khtml-transition: all 0.1s linear;
+            -moz-transition: all 0.1s linear;
+            -o-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+            -webkit-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -khtml-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -moz-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -o-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            background : #8B8B7A;
+          }
+        input[type="checkbox"]
+        {
+            position:fixed;left:20px;top:25px;
+            visibility: hidden;
+        }
+        .checkboxThree {
+            width: 120px;
+            height: 40px;
+            background: #fff2cc;
+            margin: 20px 60px;
+
+            border-radius: 50px;
+            position:absolute; top : 50px;left:100px;
+        }
+        .checkboxThree:before {
+            content: 'no';
+            position: absolute;
+            top: 12px;
+            left: 84px;
+            height: 2px;
+            color:#4A4A4A;
+            font-size: 15px;
+        }
+        /**
+         * Create the label for the off position
+         */
+        .checkboxThree:after {
+            content: 'ok';
+
+            position: absolute;
+            top: 12px;
+            left: 13px;
+            height: 2px;
+            color: #26ca28;
+            font-size: 15px;
+        }
+
+        .checkboxThree label {
+            display: block;
+            width: 62px;
+            height: 22px;
+            border-radius: 55px;
+
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            transition: all .5s ease;
+            cursor: pointer;
+            position: absolute;
+            top: 9px;
+            z-index: 1;
+            left: 12px;
+            background: #ddd;
+        }
+
+
+        .checkboxThree input[type=checkbox]:checked + label {
+            left: 50px;
+            background: #26ca28;
+        }
+        button{
+            position:relative;left:100px;top:-50px;
+        }
+        #play{
+            cursor:pointer
+        }
+    </style>
+</head>
+<body>
+
+    <form name = form1>
+        <h2>请选择交互方式:</h2>
+        <h3>是否聚类:</h3>
+        <center>
+            <div class="checkboxThree">
+                <input type="checkbox" id="checkboxThreeInput" name = cluster onclick = "check1Click()"/>
+                <<label for="checkboxThreeInput"></label>
+            </div>
+        </center>
+    </form>
+    <form name = form2>
+
+        <h3 >按关键字选择:</h3>
+
+        <input type = "button"  id = "button0" name = "button1" value = "跑水 " onclick="btnClk(this.id)">
+        <input type = "button" id = "button1" name = "button2" value = "漏水 " onclick="btnClk(this.id)">
+        <input type = "button" id = "button2" name = "button3" value = "积水 "onclick="btnClk(this.id)">
+        <input type = "button" id = "button3" name = "button4" value = "渗水 "onclick="btnClk(this.id)">
+        <input type = "button" id = "button4" name = "button5"  value = "污水 "onclick="btnClk(this.id)">
+        <input type = "button" id = "button5" name = "button5"  value = "水质 "onclick="btnClk(this.id)">
+        <input type = "button"  id = "button6" name = "button6" value = "水压 "onclick="btnClk(this.id)">
+        <input type = "button" id = "button7" name = "button7" value = "无水 " onclick="btnClk(this.id)">
+        <input type = "button" id = "button8" name = "button8" value = "水表 "onclick="btnClk(this.id)">
+        <input type = "button" id = "button9" name = "button9" value = "冰   "onclick="btnClk(this.id)">
+        <input type = "button" id = "button10" name = "button10"  value = "消防栓"onclick="btnClk(this.id)">
+        <input type = "button"  id = "button11" name = "button11" value = "井盖 "onclick="btnClk(this.id)">
+        <input type = "button" id = "button12" name = "button12" value = "截门 "onclick="btnClk(this.id)">
+        <input type = "button" id = "button13" name = "button13" value = "水井 "onclick="btnClk(this.id)">
+        <input type = "button" id = "button14" name = "button14" value = "井   " onclick="btnClk(this.id)">
+        <input type = "button" id = "button15" name = "button15"  value = "水管 "onclick="btnClk(this.id)">
+        <input type = "button"  id = "button16" name = "button16" value = "附近 " onclick="btnClk(this.id)">
+        <input type = "button" id = "button17" name = "button17" value = "邻居 " onclick="btnClk(this.id)">
+        <input type = "button" id = "button18" name = "button18" value = "机动车道" onclick="btnClk(this.id)">
+        <input type = "button" id = "button19" name = "button19" value = "回访" onclick="btnClk(this.id)">
+        <input type = "button" id = "button20" name = "button20"  value = "其他"onclick="btnClk(this.id)">
+    </form>
+
+    <form name = form4>
+        <h3>请选择事件时间：</h3>
+    </form>
+    <div style="position:relative; padding:20px;width:250px;margin:0 auto;font-size:12px;">
+        <input type="text" id="range"  name="range"/>
+    </div>
+
+        <h3>点击播放：</h3>
+        <button type ="button" name = "icob" id = "icob" onClick="dynamicPlay()">
+            <img id = "play" src = "img/bofang.png" width = "30px" height = "30px"/>
+        </button>
+
+    <script src="lib/moment.js"></script>
+    <script src="lib/jquery-1.11.3.js"></script>
+    <script src="lib/ion.rangeSlider.js"></script>
+    <script src="js/toolEvent.js"></script>
+
+</body>
+</html>

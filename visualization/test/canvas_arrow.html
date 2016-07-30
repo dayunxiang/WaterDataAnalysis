@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<font size="30">hello</font>
+<canvas id="MyCanvas"></canvas>
+
+<script>
+    function arrow(x,y,fill,s){
+        if(fill == undefined) fill = "red";
+        if(s == undefined) s = 6;
+        var c = document.getElementById("MyCanvas");
+        var context = c.getContext("2d");
+        context.fillStyle = fill;
+        context.beginPath();
+        context.moveTo(x, y);
+        context.lineTo(x,y + s);
+        context.lineTo(x + s * 1.73 / 2, y + s/2);
+        context.fill();
+        context.fillRect(x-s, y + 1/ 4 * s, s, s/2);
+        context.closePath();
+    }
+
+    arrow(50,10);
+
+</script>
+</body>
+</html>

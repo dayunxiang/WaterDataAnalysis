@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<canvas id="c" width="1000" height="1000"></canvas>
+<script type="text/javascript">
+    var canvas = document.getElementById( 'c' );
+    var context = canvas.getContext("2d");
+
+    context.beginPath();
+    context.rotate(20 * Math.PI / 180);
+    context.fillStyle="#06F";
+    context.moveTo(120,40);
+    context.lineTo(120,160);
+    context.lineTo(180, 100)
+    context.fill();
+    context.fillRect( 0, 75 ,120, 50 )
+    context.closePath();
+
+    context.beginPath();
+    context.rotate(-20 * Math.PI / 180);
+    context.fillStyle="red";
+    context.moveTo(240,40);
+    context.lineTo(240,160);
+    context.lineTo(300, 100);
+
+    //context.fill();
+    context.lineTo(240,40);
+    context.stroke();
+    context.fillText("hello",120,240,10);
+
+    context.fillRect( 120, 75 ,120, 50 );
+    context.closePath();
+</script>
+</body>
+</html>
